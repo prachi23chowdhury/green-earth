@@ -45,7 +45,7 @@ const displayTrees = (trees) => {
 
   trees.forEach(tree => {
     const card = document.createElement("div");
-    card.className = "bg-white rounded-xl shadow-md w-full p-4";
+    card.className = "bg-white rounded-xl shadow-md p-4";
 
     card.innerHTML = `
       <img src="${tree.image}" alt="${tree.name}" class="w-full h-40 object-cover rounded-lg mb-4">
@@ -58,7 +58,7 @@ const displayTrees = (trees) => {
 
       <div class="flex items-center justify-between mb-4">
         <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">${tree.category}</span>
-        <span class="text-sm font-semibold">฿${tree.price}</span>
+        <span class="text-sm font-semibold"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${tree.price}</span>
       </div>
 
       <button class="w-full bg-green-600 hover:bg-green-700 text-white text-sm py-2 rounded-full">
