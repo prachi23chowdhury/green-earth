@@ -64,7 +64,6 @@
      </div>
 </section>
 
-
 <section class="mt-10 m-10 ">
   <h1 class="font-bold text-3xl text-center mb-10 ">Choose Your Trees</h1>
   <div class="flex flex-col sm:flex-row">
@@ -72,18 +71,48 @@
  
  </div>
 
+<div id="spinner" class=" justify-center items-center py-10 hidden">
+<span class="loading loading-dots loading-xl"></span>
+</div>
+
+
 <!-- card part -->
-<div  id="container" class="grid gap-6 grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 ml-0 mb-10 px-4 ">
+<div  id="container" class="grid gap-6 grid-cols-1 sm:grid-cols-1 lg:grid-cols-3  mb-10 px-4 ">
   
 </div>
   
-<div class="max-w-xs mx-auto bg-green-50 p-4 rounded-lg shadow lg:w-[800px] w-full h-[400px]">
+<div class="max-w-xs mx-auto bg-green-50 p-4 rounded-lg shadow lg:w-[800px] w-full">
   <h2 class="text-lg font-semibold mb-4 text-center">Your Cart</h2>
+  <ul id="cart-list" class="space-y-2"></ul>
+  <div class="mt-4 font-semibold text-left ">
+    Total: <span id="cart-total"><i class="fa-solid fa-bangladeshi-taka-sign"></i>0</span>
+  </div>
 </div>
 
 </div>
 </section>
 
+
+<!-- modal  -->
+<section>
+  <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="detail-container" class="space-y-5">
+     
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+</section>
+
+<!-- about  -->
   <section class="bg-green-50 py-12 px-4 md:px-16">
   <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">About the Campaign</h2>
   
@@ -95,8 +124,8 @@
     </div>
     
     
-    <div class="w-full md:w-1/2 text-gray-700 pt-40">
-      <p class="mb-4">
+    <div class="w-full md:w-1/2 text-gray-700 md:mt-40">
+      <p class="mb-4 ">
         Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
       </p>
       <ul class="list-disc pl-5 space-y-1">
@@ -109,6 +138,7 @@
   </div>
 </section>
 
+<!-- impact section -->
 <section id="impact" class="bg-[#CFF0DC] py-12">
   <h2 class="text-center text-3xl font-bold mb-8">Our Impact</h2>
   <div class="flex flex-col md:flex-row justify-center items-center gap-6 px-4 md:px-0">
@@ -131,6 +161,42 @@
     </div>
   </div>
 </section>
+
+<!-- form section -->
+<section class="bg-[#166534] py-16 px-4">
+  <h2 class="text-white text-2xl md:text-3xl font-semibold text-center mb-8">
+    Plant a Tree Today
+  </h2>
+
+  <div class="max-w-md mx-auto bg-[#15803D] p-8 rounded-lg shadow-lg">
+    <form action="#" class="space-y-4">
+      
+      
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded-md bg-white text-gray-800 placeholder-gray-500  focus:ring-2 focus:ring-yellow-400"/>
+      <input type="email" placeholder="Your Email Address"class="w-full px-4 py-2 rounded-md bg-white text-gray-800 placeholder-gray-500  focus:ring-2 focus:ring-yellow-400"/>
+      <select class="w-full px-4 py-2 rounded-md bg-white text-gray-800  focus:ring-2 focus:ring-yellow-400">
+        <option disabled selected>Number of Trees</option>
+        <option>1 Tree - $5</option>
+        <option>5 Trees - $25</option>
+        <option>10 Tree - $50</option>
+      </select>
+      <button 
+        type="submit"
+        class="w-full bg-[#FACC15] hover:bg-yellow-500 text-[#15803D] font-semibold py-2 rounded-full transition duration-300"
+      >
+        Donate Now
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<!--Footer Section -->
+<footer class="bg-[#14532D] py-4">
+  <div class="text-center text-sm text-white">
+    © 2025 Green Earth. All Rights Reserved.
+  </div>
+</footer>
 <script src="script/index.js"></script>
 </body>
 </html>
