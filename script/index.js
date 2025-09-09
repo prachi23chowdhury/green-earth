@@ -16,7 +16,7 @@ const displayCategories = (categories) => {
 
   const items = categories.map((category) => `
       <li>
-        <a id="cat-btn-${category.id}" href="#" onclick = "loadTreesByCategory(${category.id})" class="block px-4 py-2 hover:bg-green-200 rounded">${category.category_name}</a>
+        <a id="cat-btn-${category.id}" href="#" onclick = "loadTreesByCategory(${category.id})" class="block px-4 py-2 hover:bg-green-200 cat-btn rounded">${category.category_name}</a>
       </li>
     `).join("");
 
@@ -31,16 +31,26 @@ const displayCategories = (categories) => {
   categoriesContainer.appendChild(sidebar);
 };
 
-// new part
+// active part
+const removeActive = () =>{
+  const catButtons = document.querySelectorAll(".cat-btn");
+  // console.log(catButtons)
+  catButtons.forEach(btn=> btn.classList.remove("active"))
+};
+
+
 const loadTreesByCategory = (categoryId) => {
-  manageSpinner(true);
+  manageSpinner(true)
   console.log(categoryId)
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then(res => res.json())
     .then(data => {
-      
-      displayTrees(data.plants)});
-    
+      removeActive();
+      const clickBtn = document.getElementById(`cat-btn-${categoryId}`);
+      //console.log(clickBtn)
+      clickBtn.classList.add("active");
+     displayTrees(data.plants);
+    });
 };
 
 const loadTrees = () => {
